@@ -1,0 +1,45 @@
+## intent:greet
+- Hi
+- Hello
+- Hey
+- Hi there
+- Hello there
+
+## intent:goodbye
+- Bye
+- Goodbye
+- See you later
+- See you soon
+
+## intent:inform_symptoms
+- I have a headache
+- I have a stomach ache
+- I have a fever
+- I have a cough
+- I have a cold
+
+## intent:seek_advice
+- What should I do
+- What can I do
+- What is the treatment
+- How can I treat this
+
+## intent:seek_doctor
+- Should I see a doctor
+- Do I need to see a doctor
+
+## intent:rest
+- Should I rest
+- Do I need to rest
+
+## intent:fluids
+- Should I drink fluids
+- Do I need to drink fluids
+
+## intent:diet
+- Should I eat a healthy diet
+- Do I need to eat a healthy diet
+
+## intent:exercise
+- Should I exercise
+- Do I need to exercise

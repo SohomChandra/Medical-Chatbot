@@ -1,0 +1,20 @@
+import requests
+
+def get_medical_info(symptom):
+    response = requests.get(f"https://api.infermedica.com/v2/symptoms/{symptom}", headers={"Authorization": "YOUR_API_KEY"})
+    return response.json()
+
+def generate_response(prediction, symptom):
+    responses = {
+        0: 'I am not sure, can you please provide more information?',
+        1: 'You should consult with a doctor as soon as possible.',
+        2: 'You should take some over-the-counter pain medication and rest.',
+        3: 'You should drink plenty of fluids and rest.',
+        4: 'You should eat a healthy diet and exercise regularly.',
+    }
+    
+    if prediction == 'inform_symptoms':
+        medical_info = get_medical_info(symptom)
+        return f"You mentioned {symptom}. Here is some information: {medical_info['description']}"
+    
+    return responses.get(prediction, 'I am not sure, can you please provide more information?')

@@ -1,0 +1,19 @@
+import re
+import string
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
+nltk.download('stopwords', quiet=True)
+nltk.download('wordnet', quiet=True)
+nltk.download('punkt', quiet=True)
+
+lemmatizer = WordNetLemmatizer()
+
+def preprocess_text(text):
+    text = text.lower()
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    text = re.sub(r'\s+', ' ', text)
+    words = nltk.word_tokenize(text)
+    words = [lemmatizer.lemmatize(word) for word in words if word not in stopwords.words('english')]
+    return ' '.join(words)
